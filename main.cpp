@@ -119,14 +119,14 @@ double MC_integration (double  f(double & x), double & x_min, double & x_max, do
     for (int k = 0; k < points_number; ++k) {
         double x = dis_x(gen);
         double y = dis_y(gen);
-         if ((f(x) > 0 && y < f(x) && y > 0) || (f(x) < 0 && y > f(x) && y < 0))
+        if ((f(x) > 0 && y < f(x) && y > 0) || (f(x) < 0 && y > f(x) && y < 0))
             ++n;
     }
     return (x_max - x_min) * height * n / points_number;
 }
 
 
-double rectangle_method (double f (double & x), double left_border, double right_border, const double & eps){
+double rectangle_method (double f (double & x), double left_border, double right_border, const double & eps) {
     int n = 10;
     double I2 = 1.0e20;
     double I1 = 0;
